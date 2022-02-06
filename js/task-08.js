@@ -13,10 +13,12 @@ function onFormSubmit(event) {
         return alert('Все поля должны быть заполнены!');
     }
 
+    const collectingFormData = {};
     const formData = new FormData(event.currentTarget);
     formData.forEach((value, name) => {
-        console.log(name, value);
+        collectingFormData[name] = value;
     });
+    console.log(collectingFormData);
 
     event.currentTarget.reset();
 }

@@ -8,15 +8,11 @@ function getRandomHexColor() {
 
 const btnRef = document.querySelector('.change-color');
 const spanColorName = document.querySelector('.color');
-const bodyRef = document.querySelector('body');
-const styleRef = document.querySelector('style');
 
 btnRef.addEventListener('click', changeBgColor);
 
 function changeBgColor(event) {
-    event.preventDefault();
-    spanColorName.textContent = getRandomHexColor();
-    bodyRef.classList.add('bgcolor');
-    const textBgStyle = `.bgcolor{background-color: ${getRandomHexColor()};}`;
-    styleRef.insertAdjacentHTML('beforeend', textBgStyle);
+    const color = getRandomHexColor();
+    spanColorName.textContent = color;
+    document.body.style.background = color;
 }
